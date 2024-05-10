@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Guests;
 
 use App\Http\Controllers\Controller;
 use App\Models\Train;
+
 use Illuminate\Http\Request;
 
 class TrainController extends Controller
@@ -14,7 +15,12 @@ class TrainController extends Controller
     public function index()
     {
         //dd(Train::all());
-        $trains = Train::all();
+        $now = now()->toDateString();
+
+
+        /*dd($now); */
+        $trains = Train::where('departure_time', 'LIKE', "$now%")->get();
+        //dd($trains);
         return view('guests.trains', compact('trains'));
     }
 

@@ -10,6 +10,8 @@
                     <th scope="col">Company</th>
                     <th scope="col">Departure station</th>
                     <th scope="col">Arrival station</th>
+                    <th scope="col">Departure time</th>
+                    <th scope="col">Arrival time</th>
                 </tr>
             </thead>
             <tbody>
@@ -19,6 +21,8 @@
                     <td>{{$train->company}}</td>
                     <td>{{$train->departure_station}}</td>
                     <td>{{$train->arrival_station}}</td>
+                    <td>{{$train->departure_time}}</td>
+                    <td>{{$train->arrival_time}}</td>
                 </tr>
                 @empty
                     <h1>No train found</h1>
