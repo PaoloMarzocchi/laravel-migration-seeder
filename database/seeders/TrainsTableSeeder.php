@@ -20,10 +20,16 @@ class TrainsTableSeeder extends Seeder
             $train->company = $faker->randomElement(['Italo', 'Trenitalia']);
             $train->departure_station = $faker->city();
             $train->arrival_station = $faker->city();
-            $train->departure_date = $faker->dateTimeBetween('-1 week', '+1 week');
+            $train->departure_date = $faker->dateTimeBetween('-1 day', '+1 week');
             $train->arrival_date = $faker->dateTimeBetween('-1 day', '+1 week');
+            while ($train->arrival_date < $train->departure_date) {
+                $train->arrival_date = $faker->dateTimeBetween('-1 day', '+1 week');
+            }
             $train->departure_time = $faker->time();
             $train->arrival_time = $faker->time();
+            while ($train->arrival_time < $train->departure_time) {
+                $train->arrival_time = $faker->time();
+            }
             $train->train_code = $faker->numberBetween(10000, 19999);
             $train->carriages_number = $faker->randomDigit();
             $train->on_time = $faker->boolean();
