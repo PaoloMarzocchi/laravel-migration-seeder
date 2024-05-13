@@ -14,14 +14,8 @@ class TrainController extends Controller
      */
     public function index()
     {
-        //dd(Train::all());
-        $now = now()->toDateString();
-
-
-        /* dd($now); */
-        $trains = Train::where('departure_date', $now)->get();
-        //dd($trains);
-        return view('guests.trains', compact('trains'));
+        $trains = Train::all();
+        return view('guests.trains.index', compact('trains'));
     }
 
 
@@ -30,6 +24,13 @@ class TrainController extends Controller
      */
     public function show(Train $train)
     {
-        //
+        //dd(Train::all());
+        $now = now()->toDateString();
+
+
+        /* dd($now); */
+        $trains = Train::where('departure_date', $now)->get();
+        //dd($trains);
+        return view('guests.trains.show', compact('trains'));
     }
 }
