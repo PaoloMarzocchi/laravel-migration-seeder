@@ -1,0 +1,16 @@
+#trains {
+    background-image: url('../img/trains-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-clip: border-box; */
+    height: 100vh;
+    overflow-y: auto;
+
+    .info {
+        width: fit-content;
+        margin: 0 auto;
+        background-color: rgba(0, 0, 0, 0.486);
+        padding: 0 3rem;
+        border: 1px solid orange;
+    }
+}

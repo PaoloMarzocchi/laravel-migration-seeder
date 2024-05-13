@@ -1,19 +1,19 @@
 @extends('layouts.app')
 
-@section('page-title','Trains');
+@section('page-title','Trains')
 
 @section('content')
 
-<section id="trains">
-    <div class="container ">
+<section id="trains" class="text-light">
+    <div class="container">
         
-        <div>
-            <a class="btn btn-dark my-3" href="{{route('guests.trains.index')}}">Click for all trains</a>
-            <a class="btn btn-dark my-3" href="{{route('guests.trains.show')}}">Click for today's trains</a>
+        <div class="my-5 text-center">
+            <a class="btn btn-warning fw-bold" href="{{route('guests.trains.index')}}">Click for all trains</a>
+            <a class="btn btn-warning fw-bold" href="{{route('guests.trains.show')}}">Click for today's trains</a>
         </div>
-        <div class="my-5 d-flex justify-content-center align-items-center">
+        <div class="mt-5 d-flex justify-content-center align-items-center">
             <div class="table-responsive">
-                <table class="table table-primary">
+                <table class="table table-warning table-striped">
                     <thead>
                         <tr>
                             <th scope="col">Train code</th>
@@ -24,7 +24,7 @@
                             <th scope="col">Arrival time</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="table-group-divider">
                         @forelse($trains as $train)
                         <tr class="">
                             <td scope="row">{{$train->train_code}}</td>
@@ -42,7 +42,7 @@
             </div>
         </div>
 
-        <div class="text-center py-4">
+        <div class="info text-center py-2">
             <h3>We have few details about the trains.</h3>
             <p>
                 Go to Trenitalia website for more informations 👉 
