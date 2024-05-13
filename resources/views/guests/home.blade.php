@@ -1,13 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-
-<div class="container vh-100 d-flex justify-content-center align-items-center">
-    <div class="col text-center">
-        <h1>Welcome! click below to see our trains</h1>
-        <a class="btn btn-dark my-3" href="{{route('guests.trains.index')}}">Go to trains</a>
+<section id="welcome" class="bg-dark text-light">
+    <div class="container vh-100">
+        <div class="col text-center pt-5">
+            <h1>Welcome to BoolTrain</h1>
+            <p class="fw-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, vel.</p>
+            <a class="btn btn-outline-warning my-3 fw-bold" href="{{route('guests.trains.index')}}">Go to trains</a>
+        </div>
+        
     </div>
-    
-</div>
-
+</section>
 @endsection
