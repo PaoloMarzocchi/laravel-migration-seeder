@@ -22,7 +22,7 @@ class TrainController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Train $train)
+    public function show()
     {
         //dd(Train::all());
         $now = now()->toDateString();
