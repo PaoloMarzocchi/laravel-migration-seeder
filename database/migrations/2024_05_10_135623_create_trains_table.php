@@ -16,12 +16,14 @@ return new class extends Migration
             $table->string('company', 50)->nullable();
             $table->string('departure_station', 80);
             $table->string('arrival_station', 80);
-            $table->dateTime('departure_time')->nullable();
-            $table->dateTime('arrival_time')->nullable();
+            $table->date('departure_date');
+            $table->date('arrival_date')->nullable();
+            $table->time('departure_time')->nullable();
+            $table->time('arrival_time')->nullable();
             $table->string('train_code', 10);
             $table->tinyInteger('carriages_number')->nullable()->unsigned();
-            $table->boolean('on_time')->nullable();
-            $table->boolean('canceled')->nullable();
+            $table->boolean('on_time')->nullable()->default(1);
+            $table->boolean('canceled')->nullable()->default(0);
             $table->timestamps();
         });
     }

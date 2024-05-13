@@ -18,8 +18,8 @@ class TrainController extends Controller
         $now = now()->toDateString();
 
 
-        /*dd($now); */
-        $trains = Train::where('departure_time', 'LIKE', "$now%")->get();
+        /* dd($now); */
+        $trains = Train::where('departure_date', $now)->get();
         //dd($trains);
         return view('guests.trains', compact('trains'));
     }
